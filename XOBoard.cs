@@ -43,6 +43,11 @@ namespace TicTacToe
 
         public XOE? Status()
         {
+            if (this.count == this.size * this.size)
+            {
+                return XOE.D;
+            }
+
             var success = 0;
             for (int i = 0; i < this.size; i++)
             {
@@ -107,11 +112,6 @@ namespace TicTacToe
             if (success == this.size)
             {
                 return this.board[0, this.size - 1];
-            }
-
-            if (this.count == this.size * this.size)
-            {
-                return XOE.D;
             }
 
             return null;
